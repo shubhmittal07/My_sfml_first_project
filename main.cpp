@@ -19,10 +19,11 @@ int main()
     circle.setOrigin(sf::Vector2f(circle.getRadius(),circle.getRadius()));
     ////////////////////////////////////////////////////////////////////
     sf::ConvexShape tri;
-    tri.setPointCount(3);
+    tri.setPointCount(4);
     tri.setPoint(0, sf::Vector2f(-100, 0));
     tri.setPoint(1, sf::Vector2f(0, -100));
     tri.setPoint(2, sf::Vector2f(100, 0));
+    tri.setPoint(3, sf::Vector2f(0, 100));
     tri.setFillColor(sf::Color(128, 0, 128, 255));
     tri.setPosition(viewSize.x / 2, viewSize.y / 2);
 
