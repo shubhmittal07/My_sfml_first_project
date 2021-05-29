@@ -36,6 +36,8 @@ int main()
         }
         window.clear(sf::Color::Red);
         window.draw(rect);
+        window.draw(circle);
+        window.draw(tri);
         window.display();
     }
     
