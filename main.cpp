@@ -6,30 +6,6 @@
 sf::Vector2f viewSize(1024,768);
 sf::VideoMode vm(viewSize.x,viewSize.y);
 sf::RenderWindow window(vm,"My first SFML test",sf::Style::Default);
-//sf::Texture skyTexture;
-//sf::Sprite skySprite;
-
-// void SpriteLoader(std::string &path,bool dynamicSize)
-// {
-//     sf::Texture texture1;
-//     sf::Sprite sprite1;
-//     texture1.loadFromFile(path);
-//     sprite1.setTexture(texture1);
-//     if(dynamicSize)
-//     {
-//         sprite1.setScale(
-//         viewSize.x/skySprite.getLocalBounds().width,
-//         viewSize.y/skySprite.getLocalBounds().height);
-//     }
-// }
-// void init()
-// {
-//     skyTexture.loadFromFile("Assets/graphics/sky.png");
-//     skySprite.setTexture(skyTexture);
-//     skySprite.setScale(
-//         viewSize.x/skySprite.getLocalBounds().width,
-//         viewSize.y/skySprite.getLocalBounds().height);
-//         //dynamic way to set the size of background sprites
 // }
 class spriteLoad
 {
