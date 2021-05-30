@@ -6,7 +6,6 @@
 sf::Vector2f viewSize(1024,768);
 sf::VideoMode vm(viewSize.x,viewSize.y);
 sf::RenderWindow window(vm,"My first SFML test",sf::Style::Default);
-// }
 class spriteLoad
 {
     private:
@@ -23,18 +22,36 @@ class spriteLoad
             window.draw(sprite1);
         }
 
-        void setSize(sf::Vector2f &viewSize)
+        void setAutoSize(float x,float y)
         {
-            sprite1.setScale(viewSize.x/sprite1.getLocalBounds().width,
-            viewSize.y/sprite1.getLocalBounds().height);
+            sprite1.setScale(x/sprite1.getLocalBounds().width,
+            y/sprite1.getLocalBounds().height);
+        }
+        void setPosition(float x,float y)
+        {
+            sprite1.setPosition(x,y);
+        }
+        void setOrigin(float x,float y)
+        {
+            sprite1.setOrigin(sprite1.getLocalBounds().width/x,sprite1.getLocalBounds().height/y);
         }
 };
 int main()
 {
     spriteLoad skySprite;
-    std::string spriteAdd = "Assets/graphics/sky.png";
-    skySprite.loadSprite(spriteAdd);
-    skySprite.setSize(viewSize);
+    spriteLoad background;
+    std::string skySpriteAdd = "Assets/graphics/sky.png";
+    std::string bgSpriteAdd = "Assets/graphics/bg.png";
+
+    skySprite.loadSprite(skySpriteAdd);
+    skySprite.setAutoSize(viewSize.x,viewSize.y);
+
+    background.loadSprite(bgSpriteAdd);
+    background.setAutoSize(viewSize.x,
+    viewSize.y-400);
+    background.setOrigin(2,1);
+    background.setPosition(viewSize.x/2,viewSize.y);
+
     while(window.isOpen())
     {
         sf::Event event;
@@ -45,6 +62,7 @@ int main()
         }
         window.clear(sf::Color::White);
         skySprite.Draw(window);
+        background.Draw(window);
         window.display();
     }
     
