@@ -32,6 +32,28 @@ sf::RenderWindow window(vm,"My first SFML test",sf::Style::Default);
 //         viewSize.y/skySprite.getLocalBounds().height);
 //         //dynamic way to set the size of background sprites
 // }
+class spriteLoad
+{
+    private:
+        sf::Texture texture1;
+        sf::Sprite sprite1;
+    public:
+        void spriteLoad::loadSprite(std::string &path)
+        {
+            texture1.loadFromFile(path);
+            sprite1.setTexture(texture1);
+        }
+        void spriteLoad::Draw(sf::RenderWindow &window) const
+        {
+            window.draw(sprite1);
+        }
+
+        void spriteLoad::setSize(sf::Vector2f &viewSize)
+        {
+            sprite1.setScale(viewSize.x/sprite1.getLocalBounds().width,
+            viewSize.y/sprite1.getLocalBounds().height);
+        }
+};
 int main()
 {
     spriteLoad skySprite;
