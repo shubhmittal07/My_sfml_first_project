@@ -1,7 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <string>
-#include "spriteLoad.h"
 
 
 sf::Vector2f viewSize(1024,768);
