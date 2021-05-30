@@ -37,17 +37,17 @@ class spriteLoad
         sf::Texture texture1;
         sf::Sprite sprite1;
     public:
-        void spriteLoad::loadSprite(std::string &path)
+        void loadSprite(std::string &path)
         {
             texture1.loadFromFile(path);
             sprite1.setTexture(texture1);
         }
-        void spriteLoad::Draw(sf::RenderWindow &window) const
+        void Draw(sf::RenderWindow &window) const
         {
             window.draw(sprite1);
         }
 
-        void spriteLoad::setSize(sf::Vector2f &viewSize)
+        void setSize(sf::Vector2f &viewSize)
         {
             sprite1.setScale(viewSize.x/sprite1.getLocalBounds().width,
             viewSize.y/sprite1.getLocalBounds().height);
@@ -57,8 +57,8 @@ int main()
 {
     spriteLoad skySprite;
     std::string spriteAdd = "Assets/graphics/sky.png";
-    skySprite.spriteLoad::loadSprite(spriteAdd);
-    skySprite.spriteLoad::setSize(viewSize);
+    skySprite.loadSprite(spriteAdd);
+    skySprite.setSize(viewSize);
     while(window.isOpen())
     {
         sf::Event event;
@@ -68,7 +68,7 @@ int main()
                 window.close();
         }
         window.clear(sf::Color::White);
-        skySprite.spriteLoad::Draw(window);
+        skySprite.Draw(window);
         window.display();
     }
     
