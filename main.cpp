@@ -36,8 +36,8 @@ int main()
 {
     spriteLoad skySprite;
     std::string spriteAdd = "Assets/graphics/sky.png";
-    skySprite.loadSprite(spriteAdd);
-    skySprite.setSize(viewSize);
+    skySprite.spriteLoad::loadSprite(spriteAdd);
+    skySprite.spriteLoad::setSize(viewSize);
     while(window.isOpen())
     {
         sf::Event event;
@@ -47,7 +47,7 @@ int main()
                 window.close();
         }
         window.clear(sf::Color::White);
-        skySprite.Draw(window);
+        skySprite.spriteLoad::Draw(window);
         window.display();
     }
     
